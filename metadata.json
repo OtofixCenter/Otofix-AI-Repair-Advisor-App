@@ -1,0 +1,7 @@
+{
+  "name": "GallaCenter AI Repair Advisor",
+  "description": "An AI-powered tool to help diagnose vehicle issues. Select your vehicle, upload a photo of the part, and get an expert analysis from our virtual auto repair master.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
