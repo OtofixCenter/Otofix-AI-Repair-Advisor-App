@@ -11,10 +11,9 @@ export enum VehicleCategory {
   SMART_HOME = 'Smart Home Device',
   GARDEN_MACHINE = 'Vineyard/Garden Machine',
 }
-
-export interface VehicleInfo {
-  category: VehicleCategory | null;
-  brand: string | null;
-  model: string | null;
-  year: number | null;
-}
+export type VehicleInfo = {
+  type: string;
+  brand: string;
+  model: string;
+  year: string;
+};

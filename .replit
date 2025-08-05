@@ -1,0 +1,19 @@
+run = "npm run dev"
+language = "nodejs"
+modules = ["nodejs-20"]
+
+[env]
+PORT = "3000"
+
+[[ports]]
+localPort = 3000
+
+[[ports]]
+localPort = 5173
+externalPort = 80
+exposeLocalhost = true
+
+[[ports]]
+localPort = 5175
+externalPort = 3000
+exposeLocalhost = true
