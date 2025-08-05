@@ -2,11 +2,12 @@ import streamlit as st
 import google.generativeai as genai
 import os
 
-# Fetching the Google Gemini API key from Streamlit Secrets (environment variables).
-# Make sure to define this key as 'GOOGLE_API_KEY' in Streamlit Cloud Secrets.
+# Google Gemini API anahtarını Streamlit Secrets'tan (ortam değişkenlerinden) çekiyoruz.
+# Streamlit Cloud'da bu anahtarı '.streamlit/secrets.toml' dosyasında
+# 'GOOGLE_API_KEY' adıyla tanımladığınızdan emin olun.
 api_key = os.environ.get("GOOGLE_API_KEY")
 
-# If the API key is not found, display an error message to the user and stop the app.
+# API anahtarı bulunamazsa kullanıcıya hata mesajı göster ve uygulamayı durdur.
 if not api_key:
     st.error("API Key not found. Please set the 'GOOGLE_API_KEY' environment variable in Streamlit Secrets.")
     st.stop() # Prevents the application from proceeding further.
@@ -15,8 +16,7 @@ else:
     genai.configure(api_key=api_key)
 
 # Specifying the Gemini model to be used.
-# Using 'gemini-1.5-flash-latest' which is more current and compatible with generateContent.
-# 'gemini-1.5-flash-latest' is a good choice for quick responses.
+# 'gemini-1.5-flash-latest' is a good choice for quick responses and compatibility.
 model = genai.GenerativeModel('gemini-1.5-flash-latest')
 
 # Configuring Streamlit page settings.
