@@ -1,8 +1,15 @@
-// vite.config.ts veya vite.config.js
-export default {
+import { defineConfig } from 'vite'
+
+export default defineConfig({
   server: {
-    port: 3000, // veya 5173, 5174 vs.
-    host: true,
-    allowedHosts: 'all', // Replit gibi platformlar için şart
+    host: '0.0.0.0', // Replit için gerekli
+    port: 3000,
+    hmr: {
+      clientPort: 443
+    },
+    // Bu satırı ekleyin:
+    fs: {
+      allow: ['.'] // Replit için gerekli, projenin tüm dosyalarına erişim sağlar
+    }
   }
-}
+})
