@@ -3,10 +3,10 @@ import google.generativeai as genai
 import os
 
 # Get the API key from environment variables
-api_key = os.environ.get("GOOGLE_API_KEY")
+api_key = os.environ.get("VITE_GOOGLE_API_KEY")
 
 if not api_key:
-    st.error("API Key not found. Please set the GOOGLE_API_KEY environment variable in Vercel.")
+    st.error("API Key not found. Please set the VITE_GOOGLE_API_KEY environment variable in Vercel.")
     st.stop()
 else:
     genai.configure(api_key=api_key)
